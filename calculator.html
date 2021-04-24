@@ -28,7 +28,7 @@
             letter-spacing: 3px;
             font-weight: 700;
             color: black;
-            background: rgb(119,240,191);
+            background: rgb(119, 240, 191);
             box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
             transition: .3s;
         }
@@ -44,34 +44,55 @@
 
 <body>
     <h1>Calculator</h1>
-    <button class="floating-button" onclick="alert(+a + +b);">+</button>
-    <button class="floating-button" onclick="alert(`Результат вычитания чисел ${a} и ${b} равен: ${subResult}`);">-</button>
-    <button class="floating-button" onclick="alert(`Результат умножения чисел ${a} и ${b} равен: ${multResult}`);">*</button>
+    <button class="floating-button" onclick="showSumResult();">+</button>
+    <button class="floating-button" onclick="showSubResult();">-</button>
+    <button class="floating-button" onclick="showMultResult();">*</button>
     <button class="floating-button" onclick="showDivResult();">/</button>
 
     <script>
-        let a = prompt("Введите первое число:");
-        let b = prompt("Введите второе число:");
+        function showSumResult() {
+            let a = prompt("Введите первое число:");
+            let b = prompt("Введите второе число:");
 
-        function sub(a,b){
-            return a-b;
+            function sum(a, b) {
+                return +a + +b;
+            }
+            let sumResult = sum(a, b)
+            alert(`Результат сложения чисел ${a} и ${b} равен: ${sumResult}`)
         }
-        let subResult = sub(a,b)
 
-        function mult(a,b){
-            return a*b;
-        }
-        let multResult = mult(a,b)
+        function showSubResult() {
+            let a = prompt("Введите первое число:");
+            let b = prompt("Введите второе число:");
 
-        function div(a,b){
-            return a/b;
+            function sub(a, b) {
+                return a - b;
+            }
+            let subResult = sub(a, b)
+            alert(`Результат вычитания чисел ${a} и ${b} равен: ${subResult}`)
         }
-        let divResult = div(a,b)
 
-        function showDivResult(){
-            alert (`Результат деления чисел ${a} и ${b} равен: ${divResult}`)
+        function showMultResult() {
+            let a = prompt("Введите первое число:");
+            let b = prompt("Введите второе число:");
+
+            function mult(a, b) {
+                return a * b;
+            }
+            let multResult = mult(a, b)
+            alert(`Результат умножения чисел ${a} и ${b} равен: ${multResult}`)
         }
-        
+
+        function showDivResult() {
+            let a = prompt("Введите первое число:");
+            let b = prompt("Введите второе число:");
+
+            function div(a, b) {
+                return a / b;
+            }
+            let divResult = div(a, b)
+            alert(`Результат деления чисел ${a} и ${b} равен: ${divResult}`)
+        }
     </script>
 </body>
 
