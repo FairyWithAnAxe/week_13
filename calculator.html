@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding-top: 100px;
+            height: 100%;
+            background-color: rgb(39, 38, 38);
+            color: #2EE59D;
+            text-align: center;
+        }
+
+        .floating-button {
+            width: 100px;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 45px;
+            margin: 150px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 3px;
+            font-weight: 700;
+            color: black;
+            background: rgb(119,240,191);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, .1);
+            transition: .3s;
+        }
+
+        .floating-button:hover {
+            background: #2EE59D;
+            box-shadow: 0 15px 20px rgba(46, 229, 157, .4);
+            color: white;
+            transform: translateY(-7px);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <button class="floating-button" onclick="alert(+a + +b);">+</button>
+    <button class="floating-button" onclick="alert(`Результат вычитания чисел ${a} и ${b} равен: ${subResult}`);">-</button>
+    <button class="floating-button" onclick="alert(`Результат умножения чисел ${a} и ${b} равен: ${multResult}`);">*</button>
+    <button class="floating-button" onclick="showDivResult();">/</button>
+
+    <script>
+        let a = prompt("Введите первое число:");
+        let b = prompt("Введите второе число:");
+
+        function sub(a,b){
+            return a-b;
+        }
+        let subResult = sub(a,b)
+
+        function mult(a,b){
+            return a*b;
+        }
+        let multResult = mult(a,b)
+
+        function div(a,b){
+            return a/b;
+        }
+        let divResult = div(a,b)
+
+        function showDivResult(){
+            alert (`Результат деления чисел ${a} и ${b} равен: ${divResult}`)
+        }
+        
+    </script>
+</body>
+
+</html>
